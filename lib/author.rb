@@ -14,12 +14,12 @@
   end
 
   def title
-    Song.all.select{|song|song.artist == self }
+    Post.all.select{|title|title.artist == self }
   end
 end
   
-  def add_song(song)
-    song.artist = self
+  def add_title(title)
+    title.author = self
   end
   ## has a relationship with Artist
   #<Song:0x00007fd2b48d2078 @artist=#<Artist:0x00007fd2b48d2168 @name="Adele">, @name="Hello">
@@ -28,17 +28,17 @@ end
   #<Song:0x00007fe94d22a158 @name="Hello">
 
    #<Artist:0x00007fe94d22a248 @name="Adele">
-  def add_song_by_name(song)
-    new_song = Song.new(song)
+  def add_title_by_name(title)
+    new_title = Post.new(title)
     # @songs << new_song
     # new_song.artist = self
 
-    add_song(new_song)
+    add_title(new_title)
   end
 
-  def self.song_count
+  def self.title_count
     # binding.pry
-    Song.all.count 
+    Post.all.count 
     # Song.all.length 
   end
 
