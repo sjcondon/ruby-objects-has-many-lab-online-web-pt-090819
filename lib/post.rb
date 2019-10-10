@@ -11,11 +11,11 @@ def Post
     @@all
   end
 
-  def artist_name
-    if !self.artist
+  def author_name
+    if !self.author
       return nil
     else
-      self.artist.name
+      self.author.name
   end
   
 end
